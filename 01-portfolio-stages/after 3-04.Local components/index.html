@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chris Dixon's Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div :style="[darkModeSet ? darkMode : '', base]">
+      <app-header></app-header>
+
+      <main>
+        <div class="blog_wrapper">
+          <button @click="toggleMode">
+            {{ darkModeSet ? '&#9788;' : '&#9789;' }}
+          </button>
+          <!-- BLOG SECTION -->
+          <section id="blog">
+            <blog-post
+              v-for="post in posts"
+              :key="post.id"
+              :post="post"
+            ></blog-post>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

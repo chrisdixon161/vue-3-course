@@ -1,2 +1,2 @@
-Vue.createApp().mount("header");
-Vue.createApp().mount("#blog");
+Vue.createApp({}).mount("header");
+Vue.createApp({}).mount("#blog");
